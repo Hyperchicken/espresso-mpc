@@ -84,7 +84,7 @@ def control_loop(dummy,state):
       # If steam button pressed, change setpoint temperature and observer gain
       steam_state = GPIO.input(conf.steam_pin)
       if steam_state:
-     	 state['settemp'] = state['settemp_orig']
+       state['settemp'] = state['settemp_orig']
          K = conf.K_brew
          mpc_mat = mpc_mat_brew
       else:
@@ -127,39 +127,41 @@ def control_loop(dummy,state):
       x_prev = x
       # Check if timer is on
       awake = timer.timer(state)
-      if awake:
-          # Equality constraint
-          if brew_state:
-              b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr']
-          else:
-              b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr_brew']
-          b_opt = matrix(b_constr, tc='d')
-          
-          print 'activating solver'
-          # Invoke solver
-          solvers.options['show_progress'] = True
-          sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
-          x_opt = numpy.array(sol['x'])
-          u_mpc = x_opt[2*n,0] # Only use first control signal
-          print 'finished solver'
-          # Integral control, only if not steaming
-          if steam_state:
-              u_I = u_I - dt*conf.K_I*x.item(1,0)
-              if u_I > conf.u_I_max:
-                  u_I = conf.u_I_max
-              elif u_I < -conf.u_I_max:
-                  u_I = -conf.u_I_max
+      try:
+          if awake:
+              # Equality constraint
+              if brew_state:
+                  b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr']
+              else:
+                  b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr_brew']
+              b_opt = matrix(b_constr, tc='d')
+              
+              print 'activating solver'
+              # Invoke solver
+              solvers.options['show_progress'] = True
+              sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
+              x_opt = numpy.array(sol['x'])
+              u_mpc = x_opt[2*n,0] # Only use first control signal
+              print 'finished solver'
+              # Integral control, only if not steaming
+              if steam_state:
+                  u_I = u_I - dt*conf.K_I*x.item(1,0)
+                  if u_I > conf.u_I_max:
+                      u_I = conf.u_I_max
+                  elif u_I < -conf.u_I_max:
+                      u_I = -conf.u_I_max
 
-          if steam_state:
-              u = u_mpc + u_I
-          else:
-              u = u_mpc
+              if steam_state:
+                  u = u_mpc + u_I
+              else:
+                  u = u_mpc
 
-          if u < 0:
-              u = 0
-          elif u > 100:
-              u = 100
-
+              if u < 0:
+                  u = 0
+              elif u > 100:
+                  u = 100
+      except Exception as e:
+          print(e)        
       else:
           u = 0
 
