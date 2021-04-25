@@ -1,0 +1,30 @@
+Bottle v0.13-dev server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+/root/espresso-mpc/espresso-mpc.py:55: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(conf.steam_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+n
+    self._target(*self._args, **self._kwargs)
+  File "/root/espresso-mpc/rest_server.py", line 226, in rest_server
+    run(host='0.0.0.0',port=conf.port,server='auto')
+  File "/root/espresso-mpc/bottle.py", line 3428, in run
+    server.run(app)
+  File "/root/espresso-mpc/bottle.py", line 3264, in run
+    return sa(self.host, self.port, **self.options).run(handler)
+  File "/root/espresso-mpc/bottle.py", line 2998, in run
+    handler_cls)
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 151, in make_server
+    server = server_class((host, port), handler_class)
+  File "/usr/lib/python2.7/SocketServer.py", line 421, in __init__
+    self.server_activate()
+  File "/usr/lib/python2.7/SocketServer.py", line 443, in server_activate
+    self.socket.listen(self.request_queue_size)
+  File "/usr/lib/python2.7/socket.py", line 224, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 98] Address already in use
+te
+    self.socket.listen(self.request_queue_size)
+  File "/usr/lib/python2.7/socket.py", line 224, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 98] Address already in use
