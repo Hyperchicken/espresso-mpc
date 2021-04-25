@@ -141,7 +141,7 @@ def control_loop(dummy,state):
           sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
           x_opt = numpy.array(sol['x'])
           u_mpc = x_opt[2*n,0] # Only use first control signal
-          
+          print 'finished solver'
           # Integral control, only if not steaming
           if steam_state:
               u_I = u_I - dt*conf.K_I*x.item(1,0)
