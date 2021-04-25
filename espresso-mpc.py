@@ -134,13 +134,14 @@ def control_loop(dummy,state):
           else:
               b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr_brew']
           b_opt = matrix(b_constr, tc='d')
-
+          
+          print 'activating solver'
           # Invoke solver
-          solvers.options['show_progress'] = False
+          solvers.options['show_progress'] = true
           sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
           x_opt = numpy.array(sol['x'])
           u_mpc = x_opt[2*n,0] # Only use first control signal
-
+          
           # Integral control, only if not steaming
           if steam_state:
               u_I = u_I - dt*conf.K_I*x.item(1,0)
@@ -176,7 +177,7 @@ def control_loop(dummy,state):
       exec_time = time1 - lasttime
 
       print 'Exec. time:', str(exec_time), 'Temperature:', state['tempc'], 'Control signal:', state['control_signal'], 'Integral control:', round(u_I, 2), 'Awake:', str(awake), 'Temp. setpoint:', str(settemp), 'y:', str(round(x.item(1,0),2))
-
+      
       sleeptime = lasttime + conf.sample_time - time()
       if sleeptime < 0 :
         sleeptime = 0
