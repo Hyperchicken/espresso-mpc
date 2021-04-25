@@ -84,13 +84,13 @@ def control_loop(dummy,state):
       # If steam button pressed, change setpoint temperature and observer gain
       steam_state = GPIO.input(conf.steam_pin)
       if steam_state:
-       state['settemp'] = state['settemp_orig']
-         K = conf.K_brew
-         mpc_mat = mpc_mat_brew
+          state['settemp'] = state['settemp_orig']
+          K = conf.K_brew
+          mpc_mat = mpc_mat_brew
       else:
-         state['settemp'] = state['setsteamtemp']
-         K = conf.K_steam
-         mpc_mat = mpc_mat_steam
+           state['settemp'] = state['setsteamtemp']
+           K = conf.K_steam
+           mpc_mat = mpc_mat_steam
 
       if steam_state != steam_state_prev:
           A = mpc_mat['A']
