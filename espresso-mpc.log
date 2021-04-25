@@ -2,29 +2,636 @@ Bottle v0.13-dev server starting up (using AutoServer())...
 Listening on http://0.0.0.0:80/
 Hit Ctrl-C to quit.
 
-/root/espresso-mpc/espresso-mpc.py:55: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python2.7/multiprocessing//root/espresso-mpc/espresso-mpc.py:55: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
   GPIO.setup(conf.steam_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-n
-    self._target(*self._args, **self._kwargs)
-  File "/root/espresso-mpc/rest_server.py", line 226, in rest_server
-    run(host='0.0.0.0',port=conf.port,server='auto')
-  File "/root/espresso-mpc/bottle.py", line 3428, in run
-    server.run(app)
-  File "/root/espresso-mpc/bottle.py", line 3264, in run
-    return sa(self.host, self.port, **self.options).run(handler)
-  File "/root/espresso-mpc/bottle.py", line 2998, in run
-    handler_cls)
-  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 151, in make_server
-    server = server_class((host, port), handler_class)
-  File "/usr/lib/python2.7/SocketServer.py", line 421, in __init__
-    self.server_activate()
-  File "/usr/lib/python2.7/SocketServer.py", line 443, in server_activate
-    self.socket.listen(self.request_queue_size)
-  File "/usr/lib/python2.7/socket.py", line 224, in meth
-    return getattr(self._sock,name)(*args)
-error: [Errno 98] Address already in use
-te
-    self.socket.listen(self.request_queue_size)
-  File "/usr/lib/python2.7/socket.py", line 224, in meth
-    return getattr(self._sock,name)(*args)
-error: [Errno 98] Address already in use
+192.168.0.8 - - [25/Apr/2021 23:17:19] "GET /allstats HTTP/1.1" 200 416
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4801e+03  1.2552e+03  8e+02  2e-01  2e-01  2e+00
+ 2:  1.5328e+03  1.5015e+03  1e+02  2e-02  3e-02  3e-01
+ 3:  1.5199e+03  1.5154e+03  1e+01  3e-03  4e-03  7e-02
+ 4:  1.5181e+03  1.5172e+03  3e+00  6e-04  7e-04  2e-02
+ 5:  1.5182e+03  1.5176e+03  2e+00  4e-04  4e-04  1e-02
+ 6:  1.5180e+03  1.5178e+03  4e-01  9e-05  1e-04  4e-03
+ 7:  1.5179e+03  1.5179e+03  4e-02  9e-06  1e-05  4e-04
+ 8:  1.5179e+03  1.5179e+03  4e-04  1e-07  1e-07  4e-06
+ 9:  1.5179e+03  1.5179e+03  4e-06  1e-09  1e-09  4e-08
+Optimal solution found.
+finished solver
+Exec. time: 5.63032698631 Temperature: 17.1 Control signal: 100.0 Integral control: 0.42 Awake: True Temp. setpoint: 101.0 y: -83.9
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4727e+03  1.2484e+03  8e+02  2e-01  2e-01  2e+00
+ 2:  1.5238e+03  1.4926e+03  1e+02  2e-02  3e-02  3e-01
+ 3:  1.5109e+03  1.5065e+03  1e+01  3e-03  4e-03  7e-02
+ 4:  1.5098e+03  1.5081e+03  5e+00  1e-03  1e-03  3e-02
+ 5:  1.5097e+03  1.5088e+03  3e+00  6e-04  7e-04  2e-02
+ 6:  1.5094e+03  1.5093e+03  2e-01  5e-05  6e-05  2e-03
+ 7:  1.5094e+03  1.5093e+03  6e-02  1e-05  2e-05  6e-04
+ 8:  1.5094e+03  1.5093e+03  2e-02  5e-06  6e-06  2e-04
+ 9:  1.5093e+03  1.5093e+03  4e-03  9e-07  1e-06  4e-05
+10:  1.5093e+03  1.5093e+03  5e-05  1e-08  1e-08  5e-07
+Optimal solution found.
+finished solver
+Exec. time: 0.22887802124 Temperature: 17.21 Control signal: 100.0 Integral control: 0.84 Awake: True Temp. setpoint: 101.0 y: -83.79
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4655e+03  1.2417e+03  8e+02  2e-01  2e-01  2e+00
+ 2:  1.5151e+03  1.4840e+03  1e+02  2e-02  3e-02  3e-01
+ 3:  1.5022e+03  1.4978e+03  1e+01  3e-03  4e-03  7e-02
+ 4:  1.5023e+03  1.5005e+03  6e+00  1e-03  1e-03  4e-02
+ 5:  1.5016e+03  1.5009e+03  2e+00  5e-04  6e-04  2e-02
+ 6:  1.5013e+03  1.5012e+03  2e-01  4e-05  5e-05  2e-03
+ 7:  1.5012e+03  1.5012e+03  3e-02  6e-06  7e-06  3e-04
+ 8:  1.5012e+03  1.5012e+03  1e-03  3e-07  4e-07  1e-05
+ 9:  1.5012e+03  1.5012e+03  1e-05  3e-09  4e-09  1e-07
+Optimal solution found.
+finished solver
+Exec. time: 0.212200880051 Temperature: 17.31 Control signal: 100.0 Integral control: 1.26 Awake: True Temp. setpoint: 101.0 y: -83.69
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4582e+03  1.2349e+03  8e+02  2e-01  2e-01  2e+00
+ 2:  1.5062e+03  1.4751e+03  1e+02  2e-02  3e-02  3e-01
+ 3:  1.4934e+03  1.4889e+03  1e+01  3e-03  4e-03  7e-02
+ 4:  1.4947e+03  1.4916e+03  1e+01  2e-03  3e-03  7e-02
+ 5:  1.4931e+03  1.4928e+03  9e-01  2e-04  2e-04  9e-03
+ 6:  1.4929e+03  1.4929e+03  1e-01  3e-05  3e-05  1e-03
+ 7:  1.4929e+03  1.4929e+03  6e-03  1e-06  1e-06  6e-05
+ 8:  1.4929e+03  1.4929e+03  6e-05  1e-08  1e-08  6e-07
+Optimal solution found.
+finished solver
+Exec. time: 0.0918459892273 Temperature: 17.43 Control signal: 100.0 Integral control: 1.67 Awake: True Temp. setpoint: 101.0 y: -83.57
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4510e+03  1.2283e+03  8e+02  2e-01  2e-01  2e+00
+ 2:  1.4975e+03  1.4665e+03  1e+02  2e-02  3e-02  4e-01
+ 3:  1.4855e+03  1.4796e+03  2e+01  4e-03  5e-03  8e-02
+ 4:  1.4869e+03  1.4830e+03  1e+01  3e-03  3e-03  8e-02
+ 5:  1.4857e+03  1.4836e+03  7e+00  1e-03  2e-03  6e-02
+ 6:  1.4849e+03  1.4846e+03  1e+00  3e-04  3e-04  1e-02
+ 7:  1.4848e+03  1.4848e+03  5e-02  1e-05  1e-05  5e-04
+ 8:  1.4848e+03  1.4848e+03  7e-04  1e-07  2e-07  6e-06
+ 9:  1.4848e+03  1.4848e+03  7e-06  1e-09  2e-09  6e-08
+Optimal solution found.
+finished solver
+Exec. time: 0.108673810959 Temperature: 17.55 Control signal: 100.0 Integral control: 2.09 Awake: True Temp. setpoint: 101.0 y: -83.45
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4438e+03  1.2216e+03  8e+02  2e-01  2e-01  2e+00
+ 2:  1.4888e+03  1.4579e+03  1e+02  2e-02  2e-02  4e-01
+ 3:  1.4775e+03  1.4705e+03  2e+01  5e-03  6e-03  9e-02
+ 4:  1.4791e+03  1.4744e+03  1e+01  3e-03  4e-03  1e-01
+ 5:  1.4776e+03  1.4751e+03  8e+00  2e-03  2e-03  7e-02
+ 6:  1.4768e+03  1.4764e+03  1e+00  3e-04  3e-04  1e-02
+ 7:  1.4767e+03  1.4766e+03  7e-02  2e-05  2e-05  6e-04
+ 8:  1.4767e+03  1.4767e+03  1e-03  2e-07  3e-07  1e-05
+ 9:  1.4767e+03  1.4767e+03  1e-05  2e-09  3e-09  1e-07
+Optimal solution found.
+finished solver
+Exec. time: 0.101833105087 Temperature: 17.67 Control signal: 100.0 Integral control: 2.51 Awake: True Temp. setpoint: 101.0 y: -83.33
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4365e+03  1.2149e+03  8e+02  2e-01  2e-01  2e+00
+ 2:  1.4800e+03  1.4492e+03  1e+02  2e-02  2e-02  4e-01
+ 3:  1.4695e+03  1.4613e+03  3e+01  6e-03  7e-03  1e-01
+ 4:  1.4710e+03  1.4658e+03  2e+01  4e-03  4e-03  1e-01
+ 5:  1.4694e+03  1.4666e+03  9e+00  2e-03  2e-03  8e-02
+ 6:  1.4685e+03  1.4683e+03  7e-01  2e-04  2e-04  7e-03
+ 7:  1.4684e+03  1.4684e+03  7e-02  1e-05  2e-05  6e-04
+ 8:  1.4684e+03  1.4684e+03  1e-03  2e-07  3e-07  1e-05
+ 9:  1.4684e+03  1.4684e+03  1e-05  2e-09  3e-09  1e-07
+Optimal solution found.
+finished solver
+Exec. time: 0.10147690773 Temperature: 17.8 Control signal: 100.0 Integral control: 2.92 Awake: True Temp. setpoint: 101.0 y: -83.2
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4294e+03  1.2083e+03  8e+02  1e-01  2e-01  2e+00
+ 2:  1.4714e+03  1.4407e+03  1e+02  2e-02  2e-02  4e-01
+ 3:  1.4616e+03  1.4524e+03  3e+01  6e-03  8e-03  1e-01
+ 4:  1.4630e+03  1.4574e+03  2e+01  4e-03  5e-03  1e-01
+ 5:  1.4613e+03  1.4584e+03  9e+00  2e-03  2e-03  8e-02
+ 6:  1.4604e+03  1.4602e+03  6e-01  1e-04  1e-04  5e-03
+ 7:  1.4603e+03  1.4603e+03  6e-02  1e-05  2e-05  5e-04
+ 8:  1.4603e+03  1.4603e+03  8e-04  2e-07  2e-07  8e-06
+ 9:  1.4603e+03  1.4603e+03  8e-06  2e-09  2e-09  8e-08
+Optimal solution found.
+finished solver
+Exec. time: 0.0959331989288 Temperature: 17.94 Control signal: 100.0 Integral control: 3.34 Awake: True Temp. setpoint: 101.0 y: -83.06
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4222e+03  1.2017e+03  8e+02  1e-01  2e-01  2e+00
+ 2:  1.4628e+03  1.4322e+03  1e+02  2e-02  2e-02  4e-01
+ 3:  1.4538e+03  1.4436e+03  3e+01  7e-03  8e-03  1e-01
+ 4:  1.4549e+03  1.4491e+03  2e+01  4e-03  5e-03  1e-01
+ 5:  1.4532e+03  1.4503e+03  9e+00  2e-03  2e-03  8e-02
+ 6:  1.4523e+03  1.4521e+03  5e-01  1e-04  1e-04  5e-03
+ 7:  1.4522e+03  1.4522e+03  6e-02  1e-05  2e-05  6e-04
+ 8:  1.4522e+03  1.4522e+03  8e-04  2e-07  2e-07  8e-06
+ 9:  1.4522e+03  1.4522e+03  8e-06  2e-09  2e-09  8e-08
+Optimal solution found.
+finished solver
+Exec. time: 0.276650905609 Temperature: 18.07 Control signal: 100.0 Integral control: 3.75 Awake: True Temp. setpoint: 101.0 y: -82.93
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4151e+03  1.1952e+03  8e+02  1e-01  2e-01  2e+00
+ 2:  1.4542e+03  1.4237e+03  1e+02  2e-02  2e-02  4e-01
+ 3:  1.4460e+03  1.4348e+03  3e+01  8e-03  9e-03  1e-01
+ 4:  1.4468e+03  1.4408e+03  2e+01  4e-03  5e-03  1e-01
+ 5:  1.4450e+03  1.4423e+03  9e+00  2e-03  2e-03  8e-02
+ 6:  1.4442e+03  1.4440e+03  5e-01  1e-04  1e-04  4e-03
+ 7:  1.4441e+03  1.4441e+03  4e-02  1e-05  1e-05  4e-04
+ 8:  1.4441e+03  1.4441e+03  6e-04  1e-07  2e-07  6e-06
+ 9:  1.4441e+03  1.4441e+03  6e-06  1e-09  2e-09  6e-08
+Optimal solution found.
+finished solver
+Exec. time: 3123.52435708 Temperature: 18.22 Control signal: 100.0 Integral control: 4.0 Awake: True Temp. setpoint: 101.0 y: -82.78
+Exec. time: 0.0169098377228 Temperature: 18.38 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -82.62
+Exec. time: 0.0105130672455 Temperature: 18.54 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -82.46
+Exec. time: 0.00503182411194 Temperature: 18.7 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -82.3
+Exec. time: 0.018492937088 Temperature: 18.86 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -82.14
+Exec. time: 0.00518608093262 Temperature: 19.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.99
+Exec. time: 0.00510907173157 Temperature: 19.15 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.85
+Exec. time: 0.00929594039917 Temperature: 19.3 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.7
+Exec. time: 0.0130360126495 Temperature: 19.44 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.56
+Exec. time: 0.00694680213928 Temperature: 19.58 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.42
+Exec. time: 0.00920104980469 Temperature: 19.71 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.29
+Exec. time: 0.00926804542542 Temperature: 19.84 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.16
+Exec. time: 0.00919198989868 Temperature: 19.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -81.04
+Exec. time: 0.00924205780029 Temperature: 20.08 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.92
+Exec. time: 0.00937795639038 Temperature: 20.19 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.81
+Exec. time: 0.00927400588989 Temperature: 20.31 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.69
+Exec. time: 0.00912094116211 Temperature: 20.42 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.58
+Exec. time: 0.00936913490295 Temperature: 20.53 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.47
+Exec. time: 0.00919699668884 Temperature: 20.63 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.37
+Exec. time: 0.00927090644836 Temperature: 20.73 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.27
+Exec. time: 0.00921082496643 Temperature: 20.82 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.18
+Exec. time: 0.00908207893372 Temperature: 20.92 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -80.08
+Exec. time: 0.0106239318848 Temperature: 21.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.99
+Exec. time: 0.00929999351501 Temperature: 21.1 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.9
+Exec. time: 0.0092442035675 Temperature: 21.19 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.81
+Exec. time: 0.00917601585388 Temperature: 21.26 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.74
+Exec. time: 0.00928807258606 Temperature: 21.34 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.66
+Exec. time: 0.00922203063965 Temperature: 21.42 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.58
+Exec. time: 0.00944709777832 Temperature: 21.49 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.51
+Exec. time: 0.0103459358215 Temperature: 21.56 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.44
+Exec. time: 0.00908398628235 Temperature: 21.64 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.36
+Exec. time: 0.0092830657959 Temperature: 21.7 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.3
+Exec. time: 0.00938701629639 Temperature: 21.76 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.24
+Exec. time: 0.00946807861328 Temperature: 21.82 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.18
+Exec. time: 0.00934290885925 Temperature: 21.88 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.12
+Exec. time: 0.0092601776123 Temperature: 21.95 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.05
+Exec. time: 0.00912690162659 Temperature: 22.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.99
+Exec. time: 0.0094358921051 Temperature: 22.06 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.94
+Exec. time: 0.00918698310852 Temperature: 22.11 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.89
+Exec. time: 0.00921893119812 Temperature: 22.16 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.84
+Exec. time: 0.00922107696533 Temperature: 22.21 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.79
+Exec. time: 0.00910997390747 Temperature: 22.26 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.74
+Exec. time: 0.0090320110321 Temperature: 22.31 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.69
+Exec. time: 0.00923013687134 Temperature: 22.35 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.65
+Exec. time: 0.00909900665283 Temperature: 22.4 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.6
+Exec. time: 0.00899386405945 Temperature: 22.44 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.56
+Exec. time: 0.00923991203308 Temperature: 22.48 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.52
+Exec. time: 0.00918507575989 Temperature: 22.51 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.49
+Exec. time: 0.00913500785828 Temperature: 22.55 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.45
+Exec. time: 0.00938010215759 Temperature: 22.59 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.41
+Exec. time: 0.00950789451599 Temperature: 22.62 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.38
+Exec. time: 0.00912690162659 Temperature: 22.64 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.36
+Exec. time: 0.0093879699707 Temperature: 22.67 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.33
+Exec. time: 0.00939702987671 Temperature: 22.7 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.3
+Exec. time: 0.00920391082764 Temperature: 22.73 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.27
+Exec. time: 0.00939202308655 Temperature: 22.75 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.25
+Exec. time: 0.00917291641235 Temperature: 22.77 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.23
+Exec. time: 0.00924777984619 Temperature: 22.79 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.21
+Exec. time: 0.00934505462646 Temperature: 22.81 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.19
+Exec. time: 0.00921010971069 Temperature: 22.83 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.17
+Exec. time: 0.00915503501892 Temperature: 22.85 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.15
+Exec. time: 0.00926303863525 Temperature: 22.87 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.13
+Exec. time: 0.00912499427795 Temperature: 22.9 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.1
+Exec. time: 0.00939202308655 Temperature: 22.92 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.08
+Exec. time: 0.0091609954834 Temperature: 22.94 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.06
+Exec. time: 0.00922012329102 Temperature: 22.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.04
+Exec. time: 0.00939989089966 Temperature: 22.97 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.03
+Exec. time: 0.00938606262207 Temperature: 22.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.01
+Exec. time: 0.00910997390747 Temperature: 22.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.01
+Exec. time: 0.00938987731934 Temperature: 22.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.01
+Exec. time: 0.00922107696533 Temperature: 22.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.01
+Exec. time: 0.00911617279053 Temperature: 23.0 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.0
+Exec. time: 0.00942611694336 Temperature: 23.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.99
+Exec. time: 0.00979208946228 Temperature: 23.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.99
+Exec. time: 0.0104129314423 Temperature: 23.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.98
+Exec. time: 0.00956296920776 Temperature: 23.03 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.97
+Exec. time: 0.0094518661499 Temperature: 23.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.98
+Exec. time: 0.0103750228882 Temperature: 23.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.98
+Exec. time: 0.00984501838684 Temperature: 23.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.98
+Exec. time: 0.00508999824524 Temperature: 23.03 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.97
+Exec. time: 0.00934314727783 Temperature: 23.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.98
+Exec. time: 0.0093138217926 Temperature: 23.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.98
+Exec. time: 0.00505185127258 Temperature: 23.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.99
+Exec. time: 0.0104269981384 Temperature: 23.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.99
+Exec. time: 0.00932598114014 Temperature: 23.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -77.99
+Exec. time: 0.00919103622437 Temperature: 23.0 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.0
+Exec. time: 0.00933885574341 Temperature: 22.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.01
+Exec. time: 0.00929307937622 Temperature: 22.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.01
+Exec. time: 0.0106859207153 Temperature: 22.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.01
+Exec. time: 0.00950002670288 Temperature: 23.0 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.0
+Exec. time: 0.00936102867126 Temperature: 23.0 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.0
+Exec. time: 0.00908994674683 Temperature: 23.0 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.0
+Exec. time: 0.00905108451843 Temperature: 22.98 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.02
+Exec. time: 0.00936484336853 Temperature: 22.97 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.03
+Exec. time: 0.0092339515686 Temperature: 22.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.04
+Exec. time: 0.00923705101013 Temperature: 22.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.04
+Exec. time: 0.00958800315857 Temperature: 22.95 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.05
+Exec. time: 0.00921893119812 Temperature: 22.94 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.06
+Exec. time: 0.0100729465485 Temperature: 22.98 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.02
+Exec. time: 0.00925397872925 Temperature: 22.97 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.03
+Exec. time: 0.00946998596191 Temperature: 22.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.04
+Exec. time: 0.00936698913574 Temperature: 22.95 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.05
+Exec. time: 0.00940799713135 Temperature: 22.94 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.06
+Exec. time: 0.00915288925171 Temperature: 22.93 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.07
+Exec. time: 0.00925803184509 Temperature: 22.93 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.07
+Exec. time: 0.00936913490295 Temperature: 22.92 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.08
+Exec. time: 0.00926399230957 Temperature: 22.9 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.1
+Exec. time: 0.00931096076965 Temperature: 22.89 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.11
+Exec. time: 0.00925016403198 Temperature: 22.87 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.13
+Exec. time: 0.00951600074768 Temperature: 22.86 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.14
+Exec. time: 0.00937390327454 Temperature: 22.86 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.14
+Exec. time: 0.00949287414551 Temperature: 22.85 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.15
+Exec. time: 0.00503396987915 Temperature: 22.84 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.16
+Exec. time: 0.00937104225159 Temperature: 22.82 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.18
+Exec. time: 0.00907897949219 Temperature: 22.81 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.19
+Exec. time: 0.00943493843079 Temperature: 22.8 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.2
+Exec. time: 0.00937700271606 Temperature: 22.79 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.21
+Exec. time: 0.00912094116211 Temperature: 22.78 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.22
+Exec. time: 0.00914883613586 Temperature: 22.77 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.23
+Exec. time: 0.00955700874329 Temperature: 22.75 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.25
+Exec. time: 0.00945687294006 Temperature: 22.73 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.27
+Exec. time: 0.00923705101013 Temperature: 22.72 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.28
+Exec. time: 0.00935697555542 Temperature: 22.71 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.29
+Exec. time: 0.0094780921936 Temperature: 22.7 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.3
+Exec. time: 0.00935506820679 Temperature: 22.69 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.31
+Exec. time: 0.00927710533142 Temperature: 22.68 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.32
+Exec. time: 0.0092499256134 Temperature: 22.68 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.32
+Exec. time: 0.0092761516571 Temperature: 22.67 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.33
+Exec. time: 0.00943803787231 Temperature: 22.67 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.33
+Exec. time: 0.00912618637085 Temperature: 22.66 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.34
+Exec. time: 0.00927090644836 Temperature: 22.65 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.35
+Exec. time: 0.00933599472046 Temperature: 22.64 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.36
+Exec. time: 0.00911211967468 Temperature: 22.64 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.36
+Exec. time: 0.00909209251404 Temperature: 22.63 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.37
+Exec. time: 0.00909495353699 Temperature: 22.61 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.39
+Exec. time: 0.00902104377747 Temperature: 22.6 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.4
+Exec. time: 0.00913405418396 Temperature: 22.6 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.4
+Exec. time: 0.00919508934021 Temperature: 22.59 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.41
+Exec. time: 0.00902986526489 Temperature: 22.58 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.42
+Exec. time: 0.00902581214905 Temperature: 22.57 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.43
+Exec. time: 0.00930190086365 Temperature: 22.56 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.44
+Exec. time: 0.0091290473938 Temperature: 22.56 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.44
+Exec. time: 0.00923204421997 Temperature: 22.55 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.45
+Exec. time: 0.00931119918823 Temperature: 22.54 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.46
+Exec. time: 0.00931096076965 Temperature: 22.53 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.47
+Exec. time: 0.00911211967468 Temperature: 22.52 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.48
+Exec. time: 0.00931906700134 Temperature: 22.51 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.49
+Exec. time: 0.00918698310852 Temperature: 22.51 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.49
+Exec. time: 0.00926303863525 Temperature: 22.5 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.5
+Exec. time: 0.0092990398407 Temperature: 22.49 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.51
+Exec. time: 0.00910592079163 Temperature: 22.48 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.52
+Exec. time: 0.00916290283203 Temperature: 22.48 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.52
+Exec. time: 0.0091450214386 Temperature: 22.46 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.54
+Exec. time: 0.00905704498291 Temperature: 22.46 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.54
+Exec. time: 0.00926303863525 Temperature: 22.45 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.55
+Exec. time: 0.00935006141663 Temperature: 22.44 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.56
+Exec. time: 0.00924396514893 Temperature: 22.43 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.57
+Exec. time: 0.00931096076965 Temperature: 22.42 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.58
+Exec. time: 0.009272813797 Temperature: 22.41 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.59
+Exec. time: 0.00916385650635 Temperature: 22.4 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.6
+Exec. time: 0.00918197631836 Temperature: 22.39 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.61
+Exec. time: 0.00933218002319 Temperature: 22.39 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.61
+Exec. time: 0.00911998748779 Temperature: 22.38 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.62
+Exec. time: 0.00916910171509 Temperature: 22.38 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.62
+Exec. time: 0.00925302505493 Temperature: 22.37 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.63
+Exec. time: 0.0093297958374 Temperature: 22.36 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.64
+Exec. time: 0.00909209251404 Temperature: 22.35 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.65
+Exec. time: 0.0091438293457 Temperature: 22.34 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.66
+Exec. time: 0.00943398475647 Temperature: 22.33 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.67
+Exec. time: 0.00930905342102 Temperature: 22.32 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.68
+Exec. time: 0.00938200950623 Temperature: 22.31 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.69
+Exec. time: 0.00914692878723 Temperature: 22.3 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.7
+Exec. time: 0.0105020999908 Temperature: 22.29 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.71
+Exec. time: 0.00939321517944 Temperature: 22.28 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.72
+Exec. time: 0.0103631019592 Temperature: 22.28 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.72
+Exec. time: 0.00954508781433 Temperature: 22.27 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.73
+Exec. time: 0.00950789451599 Temperature: 22.25 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.75
+Exec. time: 0.00964713096619 Temperature: 22.25 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.75
+Exec. time: 0.00965690612793 Temperature: 22.24 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.76
+Exec. time: 0.00993585586548 Temperature: 22.23 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.77
+Exec. time: 0.00943899154663 Temperature: 22.23 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.77
+Exec. time: 0.00985288619995 Temperature: 22.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.78
+Exec. time: 0.0094850063324 Temperature: 22.21 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.79
+Exec. time: 0.00519204139709 Temperature: 22.2 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.8
+Exec. time: 0.00499701499939 Temperature: 22.19 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.81
+Exec. time: 0.0094690322876 Temperature: 22.18 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.82
+Exec. time: 0.00927114486694 Temperature: 22.17 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.83
+Exec. time: 0.0095419883728 Temperature: 22.16 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.84
+Exec. time: 0.00987195968628 Temperature: 22.15 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.85
+Exec. time: 0.00926208496094 Temperature: 22.14 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.86
+Exec. time: 0.00951099395752 Temperature: 22.13 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.87
+Exec. time: 0.00939702987671 Temperature: 22.12 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.88
+Exec. time: 0.00926685333252 Temperature: 22.11 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.89
+Exec. time: 0.0100200176239 Temperature: 22.11 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.89
+Exec. time: 0.00940203666687 Temperature: 22.1 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.9
+Exec. time: 0.00945019721985 Temperature: 22.09 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.91
+Exec. time: 0.00987410545349 Temperature: 22.08 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.92
+Exec. time: 0.00940918922424 Temperature: 22.07 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.93
+Exec. time: 0.0095579624176 Temperature: 22.07 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.93
+Exec. time: 0.00913691520691 Temperature: 22.06 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.94
+Exec. time: 0.00915312767029 Temperature: 22.05 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.95
+Exec. time: 0.00922012329102 Temperature: 22.04 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.96
+Exec. time: 0.00907301902771 Temperature: 22.03 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.97
+Exec. time: 0.00935506820679 Temperature: 22.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.98
+Exec. time: 0.00914001464844 Temperature: 22.02 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.98
+Exec. time: 0.00953006744385 Temperature: 22.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.99
+Exec. time: 0.0101931095123 Temperature: 22.01 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -78.99
+Exec. time: 0.00926399230957 Temperature: 22.0 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.0
+Exec. time: 0.00942897796631 Temperature: 21.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.01
+Exec. time: 0.00936603546143 Temperature: 21.99 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.01
+Exec. time: 0.00942301750183 Temperature: 21.98 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.02
+Exec. time: 0.00954008102417 Temperature: 21.97 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.03
+Exec. time: 0.00934600830078 Temperature: 21.95 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.05
+Exec. time: 0.0100638866425 Temperature: 21.95 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.05
+Exec. time: 0.00924301147461 Temperature: 21.94 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.06
+Exec. time: 0.0093879699707 Temperature: 21.94 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.06
+Exec. time: 0.00918006896973 Temperature: 21.93 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.07
+Exec. time: 0.00932097434998 Temperature: 21.97 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.03
+Exec. time: 0.00947093963623 Temperature: 21.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.04
+Exec. time: 0.00952196121216 Temperature: 21.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.04
+Exec. time: 0.00995397567749 Temperature: 21.96 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.04
+Exec. time: 0.0100789070129 Temperature: 21.95 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.05
+Exec. time: 0.00945901870728 Temperature: 21.94 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.06
+Exec. time: 0.00940704345703 Temperature: 21.93 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.07
+Exec. time: 0.00940179824829 Temperature: 21.92 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.08
+Exec. time: 0.00913119316101 Temperature: 21.91 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.09
+Exec. time: 0.00954484939575 Temperature: 21.91 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.09
+Exec. time: 0.00935888290405 Temperature: 21.9 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.1
+Exec. time: 0.00938892364502 Temperature: 21.88 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.12
+Exec. time: 0.00925421714783 Temperature: 21.88 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.12
+Exec. time: 0.00919485092163 Temperature: 21.87 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.13
+Exec. time: 0.00919795036316 Temperature: 21.87 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.13
+Exec. time: 0.00906586647034 Temperature: 21.86 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.14
+Exec. time: 0.00935101509094 Temperature: 21.85 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.15
+Exec. time: 0.00916385650635 Temperature: 21.84 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.16
+Exec. time: 0.0092179775238 Temperature: 21.83 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.17
+Exec. time: 0.00935387611389 Temperature: 21.82 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.18
+Exec. time: 0.00928592681885 Temperature: 21.82 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.18
+Exec. time: 0.0091609954834 Temperature: 21.81 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.19
+Exec. time: 0.00933909416199 Temperature: 21.8 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.2
+Exec. time: 0.00911092758179 Temperature: 21.8 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.2
+Exec. time: 0.00915122032166 Temperature: 21.79 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.21
+Exec. time: 0.00931215286255 Temperature: 21.78 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.22
+Exec. time: 0.0090389251709 Temperature: 21.78 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.22
+Exec. time: 0.00902915000916 Temperature: 21.77 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.23
+Exec. time: 0.00927495956421 Temperature: 21.77 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.23
+Exec. time: 0.009192943573 Temperature: 21.76 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.24
+Exec. time: 0.00918507575989 Temperature: 21.76 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.24
+Exec. time: 0.00925898551941 Temperature: 21.76 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.24
+Exec. time: 0.00929307937622 Temperature: 21.75 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.25
+Exec. time: 0.0092408657074 Temperature: 21.75 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.25
+Exec. time: 0.00937390327454 Temperature: 21.74 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.26
+Exec. time: 0.00914096832275 Temperature: 21.74 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.26
+Exec. time: 0.0092339515686 Temperature: 21.73 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.27
+Exec. time: 0.00919508934021 Temperature: 21.72 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.28
+Exec. time: 0.00918793678284 Temperature: 21.71 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.29
+Exec. time: 0.00907588005066 Temperature: 21.71 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.29
+Exec. time: 0.00918912887573 Temperature: 21.7 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.3
+Exec. time: 0.0090160369873 Temperature: 21.69 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.31
+Exec. time: 0.00906586647034 Temperature: 21.69 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.31
+Exec. time: 0.00909399986267 Temperature: 21.68 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.32
+Exec. time: 0.00906610488892 Temperature: 21.68 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.32
+Exec. time: 0.008957862854 Temperature: 21.67 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.33
+Exec. time: 0.00926995277405 Temperature: 21.67 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.33
+Exec. time: 0.00916004180908 Temperature: 21.66 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.34
+Exec. time: 0.00916194915771 Temperature: 21.65 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.35
+Exec. time: 0.00933599472046 Temperature: 21.65 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.35
+Exec. time: 0.0092442035675 Temperature: 21.65 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.35
+Exec. time: 0.00925397872925 Temperature: 21.64 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.36
+Exec. time: 0.0093789100647 Temperature: 21.63 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.37
+Exec. time: 0.00915718078613 Temperature: 21.63 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.37
+Exec. time: 0.00927996635437 Temperature: 21.62 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.38
+Exec. time: 0.00928592681885 Temperature: 21.62 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.38
+Exec. time: 0.00914478302002 Temperature: 21.61 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.39
+Exec. time: 0.00928378105164 Temperature: 21.61 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.39
+Exec. time: 0.00928211212158 Temperature: 21.61 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.39
+Exec. time: 0.00918316841125 Temperature: 21.6 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.4
+Exec. time: 0.00922799110413 Temperature: 21.6 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.4
+Exec. time: 0.00922989845276 Temperature: 21.59 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.41
+Exec. time: 0.00919198989868 Temperature: 21.59 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.41
+Exec. time: 0.00913214683533 Temperature: 21.58 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.42
+Exec. time: 0.00917983055115 Temperature: 21.58 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.42
+Exec. time: 0.00917983055115 Temperature: 21.57 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.43
+Exec. time: 0.00927901268005 Temperature: 21.57 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.43
+Exec. time: 0.00925493240356 Temperature: 21.56 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.44
+Exec. time: 0.00925302505493 Temperature: 21.56 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.44
+Exec. time: 0.009122133255 Temperature: 21.55 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.45
+Exec. time: 0.0092408657074 Temperature: 21.55 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.45
+Exec. time: 0.00902390480042 Temperature: 21.54 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.46
+Exec. time: 0.00903797149658 Temperature: 21.54 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.46
+Exec. time: 0.00914812088013 Temperature: 21.53 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.47
+Exec. time: 0.0090639591217 Temperature: 21.53 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.47
+Exec. time: 0.00919485092163 Temperature: 21.52 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.48
+Exec. time: 0.00925612449646 Temperature: 21.51 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.49
+Exec. time: 0.00922584533691 Temperature: 21.51 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.49
+Exec. time: 0.00925302505493 Temperature: 21.5 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.5
+Exec. time: 0.0095648765564 Temperature: 21.5 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.5
+Exec. time: 0.00919389724731 Temperature: 21.5 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.5
+Exec. time: 0.009192943573 Temperature: 21.49 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.51
+Exec. time: 0.00911784172058 Temperature: 21.47 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.53
+Exec. time: 0.00902581214905 Temperature: 21.46 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.54
+Exec. time: 0.0092351436615 Temperature: 21.46 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.54
+Exec. time: 0.00792002677917 Temperature: 21.45 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.55
+Exec. time: 0.00496292114258 Temperature: 21.46 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.54
+Exec. time: 0.00480008125305 Temperature: 21.45 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.55
+Exec. time: 0.00956201553345 Temperature: 21.45 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.55
+Exec. time: 0.0092670917511 Temperature: 21.44 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.56
+Exec. time: 0.00939702987671 Temperature: 21.43 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.57
+Exec. time: 0.0049901008606 Temperature: 21.43 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.57
+Exec. time: 0.0093469619751 Temperature: 21.41 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.59
+Exec. time: 0.00913786888123 Temperature: 21.41 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.59
+Exec. time: 0.00578093528748 Temperature: 21.4 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.6
+Exec. time: 0.00499510765076 Temperature: 21.39 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.61
+Exec. time: 0.00946593284607 Temperature: 21.39 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.61
+Exec. time: 0.00926303863525 Temperature: 21.39 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.61
+Exec. time: 0.00926303863525 Temperature: 21.38 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.62
+Exec. time: 0.00929021835327 Temperature: 21.37 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.63
+Exec. time: 0.00905108451843 Temperature: 21.36 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.64
+Exec. time: 0.00889682769775 Temperature: 21.36 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.64
+Exec. time: 0.00907492637634 Temperature: 21.35 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.65
+Exec. time: 0.009272813797 Temperature: 21.35 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.65
+Exec. time: 0.00931811332703 Temperature: 21.35 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.65
+Exec. time: 0.00922608375549 Temperature: 21.34 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.66
+Exec. time: 0.00926804542542 Temperature: 21.33 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.67
+Exec. time: 0.00928211212158 Temperature: 21.33 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.67
+Exec. time: 0.00939297676086 Temperature: 21.32 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.68
+Exec. time: 0.0101342201233 Temperature: 21.31 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.69
+Exec. time: 0.00971102714539 Temperature: 21.31 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.69
+Exec. time: 0.0093309879303 Temperature: 21.29 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.71
+Exec. time: 0.00944209098816 Temperature: 21.29 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.71
+Exec. time: 0.0091540813446 Temperature: 21.29 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.71
+Exec. time: 0.00914812088013 Temperature: 21.28 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.72
+Exec. time: 0.00926899909973 Temperature: 21.28 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.72
+Exec. time: 0.0092978477478 Temperature: 21.27 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.73
+Exec. time: 0.00914621353149 Temperature: 21.27 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.73
+Exec. time: 0.00913405418396 Temperature: 21.27 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.73
+Exec. time: 0.00989890098572 Temperature: 21.27 Control signal: 0.0 Integral control: 4.0 Awake: F192.168.0.8 - - [26/Apr/2021 00:12:34] "GET / HTTP/1.1" 304 0
+192.168.0.8 - - [26/Apr/2021 00:12:34] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:33] "POST /getclienttime HTTP/1.1" 200 0
+192.168.0.8 - - [26/Apr/2021 00:12:33] "GET /coffee-icon.png HTTP/1.1" 200 59896
+192.168.0.8 - - [26/Apr/2021 00:12:33] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:33] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:34] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:34] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:35] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:35] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:36] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:36] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:37] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:38] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:39] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:40] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:40] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:41] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:41] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:42] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:43] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:43] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:44] "POST /TimerOnMo HTTP/1.1" 400 733
+192.168.0.8 - - [26/Apr/2021 00:12:44] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:44] "POST /TimerOnMo HTTP/1.1" 200 5
+alse Temp. setpoint: 101.0 y: -79.73
+Exec. time: 0.00928616523743 Temperature: 21.27 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.73
+Exec. time: 0.00919198989868 Temperature: 21.26 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.74
+Exec. time: 0.00913500785828 Temperature: 21.26 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.74
+Exec. time: 0.00930595397949 Temperature: 21.25 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.75
+Exec. time: 0.00934600830078 Temperature: 21.25 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.75
+Exec. time: 0.00960803031921 Temperature: 21.25 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.75
+Exec. time: 0.00929808616638 Temperature: 21.25 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.75
+Exec. time: 0.00923585891724 Temperature: 21.25 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.75
+Exec. time: 0.00920104980469 Temperature: 21.24 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.76
+Exec. time: 0.00915384292603 Temperature: 21.24 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.76
+Exec. time: 0.00918793678284 Temperature: 21.24 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.76
+Exec. time: 0.00908803939819 Temperature: 21.24 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.76
+Exec. time: 0.0091609954834 Temperature: 21.23 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.77
+Exec. time: 0.00909018516541 Temperature: 21.23 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.77
+Exec. time: 0.00969696044922 Temperature: 21.23 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.77
+Exec. time: 0.00902819633484 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.00913786888123 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.0091450214386 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.00925016403198 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.00931191444397 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.00930404663086 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.00928211212158 Temperature: 21.21 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.79
+Exec. time: 0.00933194160461 Temperature: 21.21 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.79
+Exec. time: 0.0092921257019 Temperature: 21.21 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.79
+Exec. time: 0.00925898551941 Temperature: 21.21 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.79
+Exec. time: 0.00932598114014 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.00934219360352 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+Exec. time: 0.00926494598389 Temperature: 21.22 Control signal: 0.0 Integral control: 4.0 Awake: False Temp. setpoint: 101.0 y: -79.78
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4515e+03  1.2318e+03  8e+02  1e-01  2e-01  2e+00
+ 2:  1.4971e+03  1.4664e+03  1e+02  2e-02  2e-02  3e-01
+ 3:  1.4839e+03  1.4796e+03  1e+01  3e-03 192.168.0.8 - - [26/Apr/2021 00:12:44] "GET /allstats HTTP/1.1" 200 435
+192.168.0.8 - - [26/Apr/2021 00:12:45] "GET /allstats HTTP/1.1" 200 434
+192.168.0.8 - - [26/Apr/2021 00:12:45] "GET /allstats HTTP/1.1" 200 435
+192.168.0.8 - - [26/Apr/2021 00:12:46] "GET /allstats HTTP/1.1" 200 435
+192.168.0.8 - - [26/Apr/2021 00:12:46] "GET /allstats HTTP/1.1" 200 435
+ 3e-03  6e-02
+ 4:  1.4835e+03  1.4820e+03  5e+00  1e-03  1e-03  3e-02
+ 5:  1.4831e+03  1.4823e+03  3e+00  5e-04  7e-04  2e-02
+ 6:  1.4830e+03  1.4826e+03  1e+00  2e-04  3e-04  8e-03
+ 7:  1.4828e+03  1.4828e+03  2e-01  5e-05  6e-05  2e-03
+ 8:  1.4828e+03  1.4828e+03  3e-03  6e-07  8e-07  3e-05
+ 9:  1.4828e+03  1.4828e+03  3e-05  6e-09  8e-09  3e-07
+Optimal solution found.
+finished solver
+Exec. time: 0.144245862961 Temperature: 21.22 Control signal: 100.0 Integral control: 4.0 Awake: True Temp. setpoint: 101.0 y: -79.78
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4455e+03  1.2262e+03  8e+02  1e-01  2e-01  2e+00
+ 2:  1.4897e+03  1.4590e+03  1e+02  2e-02  2e-02  3e-01
+ 3:  1.4765e+03  1.4723e+03  1e+01  3e-03  3e-03  6e-02
+ 4:  1.4776e+03  1.4746e+03  9e+00  2e-03  2e-03  6e-02
+ 5:  1.4765e+03  1.4755e+03  3e+00  6e-04  8e-04  2e-02
+ 6:  1.4760e+03  1.4758e+03  6e-01  1e-04  2e-04  5e-03
+ 7:  1.4759e+03  1.4759e+03  4e-02  9e-06  1e-05  4e-04
+ 8:  1.4759e+03  1.4759e+03  5e-04  1e-07  1e-07  5e-06
+ 9:  1.4759e+03  1.4759e+03  5e-06  1e-09  1e-09  5e-08
+Optimal solution found.
+finished solver
+Exec. time: 0.104501962662 Temperature: 21.2 Control signal: 100.0 Integral control: 4.0 Awake: True Temp. setpoint: 101.0 y: -79.8
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4393e+03  1.2205e+03  8e+02  1e-01  2e-01  2e+00
+ 2:  1.4820e+03  1.4514e+03  1e+02  2e-02  2e-02  3e-01
+ 3:  1.4695e+03  1.4642e+03  2e+01  3e-03  4e-03  7e-02
+ 4:  1.4709e+03  1.4672e+03  1e+01  2e-03  3e-03  7e-02
+ 5:  1.4696e+03  1.4678e+03  6e+00  1e-03  1e-03  5e-02
+ 6:  1.4689e+03  1.4686e+03  1e+00  2e-04  3e-04  9e-03
+ 7:  1.4688e+03  1.4688e+03  4e-02  8e-06  1e-05  3e-04
+ 8:  1.4688e+03  1.4688e+03  5e-04  1e-07  1e-07  4e-06
+ 9:  1.4688e+03  1.4688e+03  5e-06  1e-09  1e-09  4e-08
+Optimal solution found.
+finished solver
+Exec. time: 0.104829072952 Temperature: 21.21 Control signal: 100.0 Integral control: 4.0 Awake: True Temp. setpoint: 101.0 y: -79.79
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4330e+03  1.2147e+03  7e+02  1e-01  2e-01  2e+00
+ 2:  1.4743e+03  1.4438e+03  1e+02  2e-02  2e-02  3e-01
+ 3:  1.4625e+03  1.4560e+03  2e+01  4e-03  5e-03  8e-02
+ 4:  1.4640e+03  1.4596e+03  1e+01  3e-03  4e-03  9e-02
+ 5:  1.4626e+03  1.4602e+03  7e+00  2e-03  2e-03  6e-02
+ 6:  1.4618e+03  1.4614e+03  1e+00  3e-04  3e-04  1e-02
+ 7:  1.4616e+03  1.4616e+03  6e-02  1e-05  2e-05  6e-04
+ 8:  1.4616e+03  1.4616e+03  9e-04  2e-07  2e-07  8e-06
+ 9:  1.4616e+03  1.4616e+03  9e-06  2e-09  2e-09  8e-08
+Optimal solution found.
+finished solver
+Exec. time: 0.105577945709 Temperature: 21.23 Control signal: 100.0 Integral control: 4.0 Awake: True Temp. setpoint: 101.0 y: -79.77
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4267e+03  1.2089e+03  7e+02  1e-01  2e-01  2e+00
+ 2:  1.4666e+03  1.4362e+03  1e+02  2e-02  2e-02  3e-01
+ 3:  1.4555e+03  1.4479e+03  2e+01  5e-03  6e-03  9e-02
+ 4:  1.4570e+03  1.4521e+03  2e+01  3e-03  4e-03  1e-01
+ 5:  1.4555e+03  1.4528e+03  8e+00  2e-03  2e-03  7e-02
+ 6:  1.4546e+03  1.4542e+03  1e+00  2e-04  3e-04  9e-03
+ 7:  1.4544e+03  1.4544e+03  7e-02  2e-05  2e-05  6e-04
+ 8:  1.4544e+03  1.4544e+03  1e-03  3e-07  3e-07  1e-05
+ 9:  1.4544e+03  1.4544e+03  1e-05  3e-09  3e-09  1e-07
+Optimal solution found.
+finished solver
+Exec. time: 0.104573965073 Temperature: 21.25 Control signal: 100.0 Integral control: 4.0 Awake: True Temp. setpoint: 101.0 y: -79.75
+activating solver
+     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -2.5000e+03  1e+04  2e+00  2e+00  1e+00
+ 1:  1.4204e+03  1.2031e+03  7e+02  1e-01  2e-01  2e+00
+ 2:  1.4589e+03  1.4285e+03  9e+01  2e-02  2e-02  3e-01
+ 3:  1.4485e+03  1.4399e+03  3e+01  6e-03  7e-03  1e-01
+ 4:  1.4499e+03  1.4445e+03  2e+01  4e-03  4e-03  1e-0192.168.0.8 - - [26/Apr/2021 00:12:47] "GET /allstats HTTP/1.1" 200 435
