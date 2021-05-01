@@ -128,12 +128,12 @@ def control_loop(dummy,state):
 			# Check if timer is on
 			awake = timer.timer(state)
 			if awake:
-			# Equality constraint
-			if brew_state:
-				b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr']
-			else:
-				b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr_brew']
-				b_opt = matrix(b_constr, tc='d')
+				# Equality constraint
+				if brew_state:
+					b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr']
+				else:
+					b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr_brew']
+					b_opt = matrix(b_constr, tc='d')
 
 			print('activating solver')
 			# Invoke solver
