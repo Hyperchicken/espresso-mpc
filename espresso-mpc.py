@@ -175,7 +175,7 @@ def control_loop(dummy,state):
 
       exec_time = time1 - lasttime
 
-      print 'Exec. time:', str(exec_time), 'Temperature:', state['tempc'], 'Control signal:', state['control_signal'], 'Integral control:', round(u_I, 2), 'Awake:', str(awake), 'Temp. setpoint:', str(settemp), 'y:', str(round(x.item(1,0),2))
+      print('Exec. time:', str(exec_time), 'Temperature:', state['tempc'], 'Control signal:', state['control_signal'], 'Integral control:', round(u_I, 2), 'Awake:', str(awake), 'Temp. setpoint:', str(settemp), 'y:', str(round(x.item(1,0),2)))
 
       sleeptime = lasttime + conf.sample_time - time()
       if sleeptime < 0 :
@@ -190,7 +190,7 @@ if __name__ == '__main__':
 
   from multiprocessing import Process, Manager
   from time import sleep
-  from urllib2 import urlopen
+  from urllib.request import urlopen
   import config as conf
   import pickle
   import rest_server as rest_server
