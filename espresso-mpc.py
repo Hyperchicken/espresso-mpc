@@ -190,6 +190,8 @@ def control_loop(dummy,state):
       sleep(sleeptime)
       lasttime = time()
 
+    print('failed and exiting')
+
   finally:
     GPIO.cleanup()
 
