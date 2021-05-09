@@ -26,9 +26,9 @@ def he_control_loop(dummy, state):
         GPIO.output(conf.he_pin,0)
         sleep(conf.sample_time)
 
-  finally:
-    GPIO.output(conf.he_pin,0)
-    GPIO.cleanup()
+#   finally:
+#     GPIO.output(conf.he_pin,0)
+#     GPIO.cleanup()
 
 def control_loop(dummy,state):
 
@@ -142,7 +142,10 @@ def control_loop(dummy,state):
           print('h', mpc_mat['h_opt'])
           print('A', mpc_mat['A_opt'])
           print('B',b_opt)
-          sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
+          try:
+          	sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
+		  except Exception as e:
+			print(e)
           x_opt = numpy.array(sol['x'])
           u_mpc = x_opt[2*n,0] # Only use first control signal
 
