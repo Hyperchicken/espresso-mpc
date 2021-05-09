@@ -141,7 +141,8 @@ def mpc_matrices(tempc, T_s):
     G4 = numpy.concatenate((-I_mod, numpy.zeros((n,n)), -numpy.identity(n)), axis=1)
     G = numpy.vstack((G1, G2, G3, G4))
 
-    h1 = 100*numpy.ones((n,1))
+#     h1 = 100*numpy.ones((n,1))
+    h1 = numpy.ones((n,1))
     h2 = numpy.zeros((n,1))
     h3 = numpy.zeros((n,1))
     h4 = numpy.zeros((n,1))
