@@ -26,9 +26,6 @@ def he_control_loop(dummy, state):
         GPIO.output(conf.he_pin,0)
         sleep(conf.sample_time)
 
-#   finally:
-#     GPIO.output(conf.he_pin,0)
-#     GPIO.cleanup()
 
 def control_loop(dummy,state):
 
