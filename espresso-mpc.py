@@ -137,7 +137,12 @@ def control_loop(dummy,state):
 
           # Invoke solver
           solvers.options['show_progress'] = True
-          sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt)#, solver='cvxopt')
+          print('q',mpc_mat['q_opt'])
+          print('G',mpc_mat['G_opt'])
+          print('h', mpc_mat['h_opt'])
+          print('A', mpc_mat['A_opt'])
+          print('B',b_opt)
+          sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt), solver='cvxopt')
           x_opt = numpy.array(sol['x'])
           u_mpc = x_opt[2*n,0] # Only use first control signal
 
