@@ -146,7 +146,9 @@ def mpc_matrices(tempc, T_s):
     h3 = numpy.zeros((n,1))
     h4 = numpy.zeros((n,1))
     h = numpy.vstack((h1, h2, h3, h4))
-
+    
+    print('Hmpc',h)
+    print('Gmpc',G)
     # Optimization matrices
     q_opt = matrix(q, tc='d')
     G_opt = matrix(G, tc='d')
