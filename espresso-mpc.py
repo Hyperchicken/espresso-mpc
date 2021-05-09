@@ -25,6 +25,8 @@ def he_control_loop(dummy, state):
       else:
         GPIO.output(conf.he_pin,0)
         sleep(conf.sample_time)
+  finally:
+	pass
 
 
 def control_loop(dummy,state):
