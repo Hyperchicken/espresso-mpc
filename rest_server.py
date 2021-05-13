@@ -13,6 +13,7 @@ def rest_server(dummy,state):
 
   @route('/')
   def docroot():
+    return wwwdir
     return static_file('index.html',wwwdir)
 
   @route('/<filepath:path>')
