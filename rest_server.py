@@ -40,8 +40,10 @@ def rest_server(dummy,state):
         state['settemp_orig'] = settemp
         return str(settemp)
       else:
+        pass
 #         abort(400,'Set temp out of range 10-110.')
     except:
+      pass
 #       abort(400,'Invalid number for set temp.')
 
   @post('/setsteamtemp')
@@ -52,8 +54,10 @@ def rest_server(dummy,state):
         state['setsteamtemp'] = setsteamtemp
         return str(setsteamtemp)
       else:
+        pass
 #         abort(400,'Set temp out of range 110-150.')
     except:
+      pass
 #       abort(400,'Invalid number for set temp.')
 
   @post('/getclienttime')
@@ -63,6 +67,7 @@ def rest_server(dummy,state):
         ctv = datetime.fromtimestamp(clienttime)
         set_time.set_time((ctv.year, ctv.month, ctv.day, ctv.hour, ctv.minute, ctv.second, 0))
     except:
+      pass
 #         abort(400,'Could not synchronize time')
 
   @post('/TimerOnMo')
@@ -71,6 +76,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOnMo,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOnMo'] = TimerOnMo
     return str(TimerOnMo)
@@ -81,6 +87,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOnTu,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOnTu'] = TimerOnTu
     return str(TimerOnTu)
@@ -91,6 +98,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOnWe,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOnWe'] = TimerOnWe
     return str(TimerOnWe)
@@ -101,6 +109,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOnTh,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOnTh'] = TimerOnTh
     return str(TimerOnTh)
@@ -111,6 +120,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOnFr,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOnFr'] = TimerOnFr
     return str(TimerOnFr)
@@ -121,6 +131,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOnSa,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOnSa'] = TimerOnSa
     return str(TimerOnSa)
@@ -131,6 +142,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOnSu,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOnSu'] = TimerOnSu
     return str(TimerOnSu)
@@ -141,6 +153,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOffMo,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOffMo'] = TimerOffMo
     return str(TimerOffMo)
@@ -151,6 +164,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOffTu,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOffTu'] = TimerOffTu
     return str(TimerOffTu)
@@ -161,6 +175,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOffWe,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOffWe'] = TimerOffWe
     return str(TimerOffWe)
@@ -171,6 +186,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOffTh,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOffTh'] = TimerOffTh
     return str(TimerOffTh)
@@ -181,6 +197,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOffFr,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOffFr'] = TimerOffFr
     return str(TimerOffFr)
@@ -191,6 +208,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOffSa,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOffSa'] = TimerOffSa
     return str(TimerOffSa)
@@ -201,6 +219,7 @@ def rest_server(dummy,state):
     try:
       datetime.strptime(TimerOffSu,'%H:%M')
     except:
+      pass
 #       abort(400,'Invalid time format.')
     state['TimerOffSu'] = TimerOffSu
     return str(TimerOffSu)
