@@ -26,7 +26,7 @@ def he_control_loop(dummy, state):
         GPIO.output(conf.he_pin,0)
         sleep(conf.sample_time)
   finally:
-	pass
+	  pass
 
 
 def control_loop(dummy,state):
@@ -75,39 +75,39 @@ def control_loop(dummy,state):
       settemp = state['settemp']
       tempc = sensor.readTempC()
       if math.isnan(tempc):
-          tempc = tempc_prev
+        tempc = tempc_prev
       if abs(tempc - tempc_prev) > 100:
-           tempc = tempc_prev
+        tempc = tempc_prev
       tempc_prev = tempc
 
       # If steam button pressed, change setpoint temperature and observer gain
       steam_state = GPIO.input(conf.steam_pin)
       if steam_state:
-     	 state['settemp'] = state['settemp_orig']
-         K = conf.K_brew
-         mpc_mat = mpc_mat_brew
+        state['settemp'] = state['settemp_orig']
+        K = conf.K_brew
+        mpc_mat = mpc_mat_brew
       else:
-         state['settemp'] = state['setsteamtemp']
-         K = conf.K_steam
-         mpc_mat = mpc_mat_steam
+        state['settemp'] = state['setsteamtemp']
+        K = conf.K_steam
+        mpc_mat = mpc_mat_steam
 
       if steam_state != steam_state_prev:
-          A = mpc_mat['A']
-          B = mpc_mat['B']
-          B2 = mpc_mat['B2']
-          steam_state_prev = steam_state
+        A = mpc_mat['A']
+        B = mpc_mat['B']
+        B2 = mpc_mat['B2']
+        steam_state_prev = steam_state
 
       if state['settemp'] != lastsettemp :
-          # Change state instantaneously (by-pass filter)
-          settemp = state['settemp']
-          x = x - numpy.mat([[settemp], [settemp]]) + numpy.mat([[lastsettemp], [lastsettemp]])
-          x_prev = x
-          lastsettemp = state['settemp']
+        # Change state instantaneously (by-pass filter)
+        settemp = state['settemp']
+        x = x - numpy.mat([[settemp], [settemp]]) + numpy.mat([[lastsettemp], [lastsettemp]])
+        x_prev = x
+        lastsettemp = state['settemp']
 
       if settemp > 125:
-          T_s = conf.T_s_high
+        T_s = conf.T_s_high
       else:
-          T_s = conf.T_s
+        T_s = conf.T_s
       y = tempc - settemp
 
       # Observer
@@ -117,57 +117,57 @@ def control_loop(dummy,state):
       brew_state = GPIO.input(conf.brew_pin)
 
       if brew_state: # Not brewing
-          x = A*x_prev + B*u + B2 + K*conf.sample_time*(y - y_tilde)*numpy.mat('1; 1')
-          d_1vec = numpy.zeros((n,1))
+        x = A*x_prev + B*u + B2 + K*conf.sample_time*(y - y_tilde)*numpy.mat('1; 1')
+        d_1vec = numpy.zeros((n,1))
       else: # Brewing
-          x = A*x_prev + B*(u - conf.brew_boost) + B2 + K*conf.sample_time*(y - y_tilde)*numpy.mat('1; 1')
-          d_1vec = -numpy.ones((n,1))*conf.brew_boost
+        x = A*x_prev + B*(u - conf.brew_boost) + B2 + K*conf.sample_time*(y - y_tilde)*numpy.mat('1; 1')
+        d_1vec = -numpy.ones((n,1))*conf.brew_boost
 
       x_prev = x
       # Check if timer is on
       awake = timer.timer(state)
       if awake:
-          # Equality constraint
-          if brew_state:
-              b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr']
-          else:
-              b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr_brew']
-          b_opt = matrix(b_constr, tc='d')
+        # Equality constraint
+        if brew_state:
+          b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr']
+        else:
+          b_constr = mpc_mat['A_app']*x + mpc_mat['b_constr_brew']
+        b_opt = matrix(b_constr, tc='d')
 
-          # Invoke solver
-          solvers.options['show_progress'] = True
-          print('q',mpc_mat['q_opt'])
-          print('G',mpc_mat['G_opt'])
-          print('h', mpc_mat['h_opt'])
-          print('A', mpc_mat['A_opt'])
-          print('B',b_opt)
-          try:
-            sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
-          except Exception as e:
-	    print(e)
-          x_opt = numpy.array(sol['x'])
-          u_mpc = x_opt[2*n,0] # Only use first control signal
+        # Invoke solver
+        solvers.options['show_progress'] = True
+        print('q',mpc_mat['q_opt'])
+        print('G',mpc_mat['G_opt'])
+        print('h', mpc_mat['h_opt'])
+        print('A', mpc_mat['A_opt'])
+        print('B',b_opt)
+        try:
+          sol = solvers.lp(mpc_mat['q_opt'], mpc_mat['G_opt'], mpc_mat['h_opt'], mpc_mat['A_opt'], b_opt, solver='cvxopt')
+        except Exception as e:
+          print(e)
+        x_opt = numpy.array(sol['x'])
+        u_mpc = x_opt[2*n,0] # Only use first control signal
 
-          # Integral control, only if not steaming
-          if steam_state:
-              u_I = u_I - dt*conf.K_I*x.item(1,0)
-              if u_I > conf.u_I_max:
-                  u_I = conf.u_I_max
-              elif u_I < -conf.u_I_max:
-                  u_I = -conf.u_I_max
+        # Integral control, only if not steaming
+        if steam_state:
+          u_I = u_I - dt*conf.K_I*x.item(1,0)
+          if u_I > conf.u_I_max:
+            u_I = conf.u_I_max
+          elif u_I < -conf.u_I_max:
+            u_I = -conf.u_I_max
 
-          if steam_state:
-              u = u_mpc + u_I
-          else:
-              u = u_mpc
+        if steam_state:
+          u = u_mpc + u_I
+        else:
+          u = u_mpc
 
-          if u < 0:
-              u = 0
-          elif u > 100:
-              u = 100
+        if u < 0:
+          u = 0
+        elif u > 100:
+          u = 100
 
       else:
-          u = 0
+        u = 0
 
       state['awake'] = awake
       state['tempc'] = round(x.item(1,0) + settemp,2)
@@ -182,7 +182,7 @@ def control_loop(dummy,state):
 
       exec_time = time1 - lasttime
 
-      print 'Exec. time:', str(exec_time), 'Temperature:', state['tempc'], 'Control signal:', state['control_signal'], 'Integral control:', round(u_I, 2), 'Awake:', str(awake), 'Temp. setpoint:', str(settemp), 'y:', str(round(x.item(1,0),2))
+      print('Exec. time:', str(exec_time), 'Temperature:', state['tempc'], 'Control signal:', state['control_signal'], 'Integral control:', round(u_I, 2), 'Awake:', str(awake), 'Temp. setpoint:', str(settemp), 'y:', str(round(x.item(1,0),2)))
 
       sleeptime = lasttime + conf.sample_time - time()
       if sleeptime < 0 :
@@ -190,7 +190,7 @@ def control_loop(dummy,state):
       sleep(sleeptime)
       lasttime = time()
 
-    print('failed and exiting')
+    #print('failed and exiting')
 
   finally:
     GPIO.cleanup()
